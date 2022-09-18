@@ -1,11 +1,12 @@
 package net.md_5.mendax.datainput;
 
+import net.md_5.mendax.PacketDefinitions;
+import net.md_5.mendax.PacketDefinitions.OpCode;
+
 import java.io.DataInput;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import net.md_5.mendax.PacketDefinitions;
-import net.md_5.mendax.PacketDefinitions.OpCode;
 
 /**
  * The packet reader
@@ -55,7 +56,8 @@ public class DataInputPacketReader {
 
     /**
      * Reads a complete packet from the specified DataInput to a provided byte array
-     * @param in the DataInput to read from
+     *
+     * @param in     the DataInput to read from
      * @param buffer the byte buffer to write to
      * @throws IOException if DataInput fails to read the specified {@link Instruction}
      */

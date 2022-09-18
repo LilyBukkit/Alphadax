@@ -19,8 +19,7 @@ public class PacketDefinitions {
         opCodes[0x01] = new OpCode[]{STRING, STRING, INT}; // Packet1Login
         opCodes[0x02] = new OpCode[]{STRING}; // Packet2Handshake
         opCodes[0x03] = new OpCode[]{STRING}; // Packet3Chat
-        opCodes[0x04] = new OpCode[]{LONG}; // Packet4UpdateTime
-        opCodes[0x05] = new OpCode[]{INT, ITEM/*STACKS*/}; // Packet5PlayerInventory
+        opCodes[0x04] = new OpCode[]{SHORT_ITEM}; // Packet5PlayerInventory
         opCodes[0x06] = new OpCode[]{INT, INT, INT}; // Packet6SpawnPosition
         //
         //
@@ -77,7 +76,7 @@ public class PacketDefinitions {
         //
         //
         opCodes[0x81] = new OpCode[]{}; // Packet129ULPPLoggedIn
-        opCodes[0x82] = new OpCode[]{STRING, STRING, STRING, SHORT, SHORT/*ARRAY*/, /*ULPP_EXTENSION_ARRAY,*/ LONG}; // Packet130RosepadMeta
+        opCodes[0x82] = new OpCode[]{STRING, STRING, STRING, SHORT_HEADER, /*ULPP_EXTENSION_ARRAY,*/ LONG}; // Packet130RosepadMeta
         //
         //
         // 0x83 -> 0xFE Do not exist
