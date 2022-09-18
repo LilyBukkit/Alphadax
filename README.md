@@ -1,5 +1,10 @@
-Mendax
-======
+# Alphadax
+**Alphadax** is a fork of Mendax, a Minecraft protocol parser and inspector, designed for use with 16.05 versions of Minecraft. The following is Mendax's original README.
+
+----  
+
+Mendax  
+======  
 The Minecraft protocol is a lie!
 --------------------------------
 Mendax is a predominantly I Minecraft protocol parser and inspector. It also includes a built in proxy.

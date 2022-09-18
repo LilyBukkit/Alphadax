@@ -7,8 +7,14 @@ import java.util.List;
 import net.md_5.mendax.PacketDefinitions;
 import net.md_5.mendax.PacketDefinitions.OpCode;
 
+/**
+ * The packet reader
+ */
 public class DataInputPacketReader {
 
+    /**
+     * Array of possible Packet instruction combinations
+     */
     private static final Instruction[][] instructions = new Instruction[256][];
 
     static {
@@ -42,11 +48,17 @@ public class DataInputPacketReader {
                     crushed.add(new Jump(nextJumpSize));
                 }
 
-                instructions[i] = crushed.toArray(new Instruction[crushed.size()]);
+                instructions[i] = crushed.toArray(new Instruction[0]);
             }
         }
     }
 
+    /**
+     * Reads a complete packet from the specified DataInput to a provided byte array
+     * @param in the DataInput to read from
+     * @param buffer the byte buffer to write to
+     * @throws IOException if DataInput fails to read the specified {@link Instruction}
+     */
     public static void readPacket(DataInput in, byte[] buffer) throws IOException {
         int packetId = in.readUnsignedByte();
         Instruction[] packetDef = instructions[packetId];

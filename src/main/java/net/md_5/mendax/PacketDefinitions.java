@@ -4,6 +4,9 @@ import static net.md_5.mendax.PacketDefinitions.OpCode.*;
 
 public class PacketDefinitions {
 
+    /**
+     * An array of existing packets and their Instructions
+     */
     public static final OpCode[][] opCodes = new OpCode[256][];
 
     public enum OpCode {
