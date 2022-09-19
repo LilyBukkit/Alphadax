@@ -27,6 +27,7 @@ abstract class Instruction {
     static final Instruction BYTE_INT = new ByteHeader(INT);
 
     // Nebula start
+    static final Instruction SHORT_SHORT = new ShortHeader(SHORT);
     static final Instruction ULPP_EXTENSION = new ULPP();
     static final Instruction SHORT_ULPP = new ShortHeader(ULPP_EXTENSION);
     // Nebula end

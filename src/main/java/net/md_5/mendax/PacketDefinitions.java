@@ -11,7 +11,9 @@ public class PacketDefinitions {
 
     public enum OpCode {
 
-        BOOLEAN, BULK_CHUNK, BYTE, BYTE_INT, DOUBLE, FLOAT, INT, INT_3, INT_BYTE, ITEM, LONG, METADATA, OPTIONAL_MOTION, SHORT, SHORT_BYTE, SHORT_ITEM, STRING, USHORT_BYTE
+        BOOLEAN, BULK_CHUNK, BYTE, BYTE_INT, DOUBLE, FLOAT, INT, INT_3, INT_BYTE, ITEM, LONG, METADATA, OPTIONAL_MOTION, SHORT, SHORT_BYTE, SHORT_ITEM, STRING, USHORT_BYTE,
+        //Nebula
+        SHORT_SHORT, SHORT_ULPP
     }
 
     static {
@@ -62,7 +64,7 @@ public class PacketDefinitions {
         //
         opCodes[0x32] = new OpCode[]{INT, INT, INT}; // Packet50PreChunk
         opCodes[0x33] = new OpCode[]{INT, SHORT, INT, INT, INT, INT, INT}; // Packet51MapChunk
-        opCodes[0x34] = new OpCode[]{INT, INT, SHORT, SHORT/*ARRAY*/, BYTE/*ARRAY*/, METADATA}; // Packet52MultiBlockChange
+        opCodes[0x34] = new OpCode[]{INT, INT, SHORT, SHORT_SHORT, BYTE/*ARRAY*/, METADATA}; // Packet52MultiBlockChange
         opCodes[0x35] = new OpCode[]{INT, INT, INT, INT, METADATA}; // Packet53BlockChange
         //
         //
@@ -76,7 +78,7 @@ public class PacketDefinitions {
         //
         //
         opCodes[0x81] = new OpCode[]{}; // Packet129ULPPLoggedIn
-        opCodes[0x82] = new OpCode[]{STRING, STRING, STRING, SHORT_HEADER, /*ULPP_EXTENSION_ARRAY,*/ LONG}; // Packet130RosepadMeta
+        opCodes[0x82] = new OpCode[]{STRING, STRING, STRING, SHORT_SHORT, SHORT_ULPP, LONG}; // Packet130RosepadMeta
         //
         //
         // 0x83 -> 0xFE Do not exist

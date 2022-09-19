@@ -3,6 +3,9 @@ package net.md_5.mendax.datainput;
 import java.io.DataInput;
 import java.io.IOException;
 
+/**
+ * Represents a segment that starts with a short (usually indicating the incoming array size) followed by an array of "child" segments
+ */
 class ShortHeader extends Instruction {
 
     private final Instruction child;
