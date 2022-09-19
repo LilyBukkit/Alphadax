@@ -26,6 +26,11 @@ abstract class Instruction {
     // Illegal forward references below this line
     static final Instruction BYTE_INT = new ByteHeader(INT);
 
+    // Nebula start
+    static final Instruction ULPP_EXTENSION = new ULPP();
+    static final Instruction SHORT_ULPP = new ShortHeader(ULPP_EXTENSION);
+    // Nebula end
+
     abstract void read(DataInput in, byte[] buffer) throws IOException;
 
     final void skip(DataInput in, byte[] buffer, int len) throws IOException {
