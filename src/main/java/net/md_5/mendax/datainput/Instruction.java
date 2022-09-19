@@ -27,9 +27,12 @@ abstract class Instruction {
     static final Instruction BYTE_INT = new ByteHeader(INT);
 
     // Nebula start
-    static final Instruction SHORT_SHORT = new ShortHeader(SHORT);
-    static final Instruction ULPP_EXTENSION = new ULPP();
-    static final Instruction SHORT_ULPP = new ShortHeader(ULPP_EXTENSION);
+    static final Instruction SHORT_SHORT = new ShortHeader(SHORT); //Short, followed by an array of shorts
+    static final Instruction ULPP_EXTENSION = new ULPPExtension(); //Single ULPP Extension
+    static final Instruction SHORT_ULPP = new ShortHeader(ULPP_EXTENSION); //Short, followed by an array of ULPP Extensions
+    static final Instruction BYTE_BYTE = new ByteHeader(BYTE); //Byte, followed by an array of bytes
+    static final Instruction NBT = new NBT(); //NBTTagCompound representation (TODO)
+    static final Instruction SHORT_NBT = new ShortHeader(NBT); //Short, followed by NBTTagCompounds
     // Nebula end
 
     abstract void read(DataInput in, byte[] buffer) throws IOException;

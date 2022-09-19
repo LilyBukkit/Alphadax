@@ -8,9 +8,9 @@ import java.io.IOException;
  *
  * @author VladTheMountain
  */
-public class ULPP extends Instruction {
+public class ULPPExtension extends Instruction {
     void read(DataInput in, byte[] buffer) throws IOException {
-        STRING.read(in, buffer); //name
-        INT.read(in, buffer); //version
+        STRING.read(in, buffer); // Extension's name
+        INT.read(in, buffer); // Extension's version
     }
 }

@@ -13,7 +13,7 @@ public class PacketDefinitions {
 
         BOOLEAN, BULK_CHUNK, BYTE, BYTE_INT, DOUBLE, FLOAT, INT, INT_3, INT_BYTE, ITEM, LONG, METADATA, OPTIONAL_MOTION, SHORT, SHORT_BYTE, SHORT_ITEM, STRING, USHORT_BYTE,
         //Nebula
-        SHORT_SHORT, SHORT_ULPP
+        SHORT_SHORT, SHORT_ULPP, BYTE_BYTE, SHORT_NBT
     }
 
     static {
@@ -64,14 +64,14 @@ public class PacketDefinitions {
         //
         opCodes[0x32] = new OpCode[]{INT, INT, INT}; // Packet50PreChunk
         opCodes[0x33] = new OpCode[]{INT, SHORT, INT, INT, INT, INT, INT}; // Packet51MapChunk
-        opCodes[0x34] = new OpCode[]{INT, INT, SHORT, SHORT_SHORT, BYTE/*ARRAY*/, METADATA}; // Packet52MultiBlockChange
+        opCodes[0x34] = new OpCode[]{INT, INT, SHORT, SHORT_SHORT, BYTE_BYTE, METADATA}; // Packet52MultiBlockChange
         opCodes[0x35] = new OpCode[]{INT, INT, INT, INT, METADATA}; // Packet53BlockChange
         //
         //
         // 0x36 -> 0x3A Do not exist
         //
         //
-        opCodes[0x3B] = new OpCode[]{INT, SHORT, INT, SHORT, BYTE/*ARRAY*/}; // Packet59ComplexEntity
+        opCodes[0x3B] = new OpCode[]{INT, SHORT, INT, SHORT_NBT}; // Packet59ComplexEntity
         //
         //
         // 0x3C -> 0x80 Do not exist
